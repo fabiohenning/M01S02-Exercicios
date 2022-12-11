@@ -1,12 +1,19 @@
-var numero = parseInt(prompt('Informe o número'));
+var soma = 0;
 
-if (isNaN(numero)) {
-  alert('Número inválido');
-} else {
-  var resultado = '';
+do {
+  var numero = prompt('Digite um número');
 
-  for (var i = 0; i <= 10; i++) {
-    resultado += numero + ' x ' + i + ' = ' + numero * i + '\n';
+  if (numero === null) {
+    break;
   }
-  alert(resultado);
-}
+
+  numero = parseInt(numero);
+
+  if (isNaN(numero) || numero === -1) {
+    continue;
+  }
+
+  soma += numero;
+} while (numero !== -1);
+
+alert(soma);
